@@ -15,11 +15,13 @@ Future<void> main() async{
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
    LocalNotificationService.initialize();
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

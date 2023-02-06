@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:push_notification_demo/services/api_service.dart';
 
 import '../services/notification_service.dart';
-import 'package:http/http.dart'as http;
 class ScreenTwo extends StatefulWidget {
   const ScreenTwo({Key? key}) : super(key: key);
 
@@ -42,6 +41,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
           //     ),
           //   );
           // }
+
         }
       },
     );
@@ -104,14 +104,15 @@ class _ScreenTwoState extends State<ScreenTwo> {
                     // );
                     apiService.sendDeviceToken(deviceTokenToSendPushNotification);
                   }else{
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const AlertDialog(
-                          content: Text('Switch is turned off'),
-                        );
-                      },
-                    );
+                    // showDialog(
+                    //   context: context,
+                    //   builder: (BuildContext context) {
+                    //     return const AlertDialog(
+                    //       content: Text('Switch is turned off'),
+                    //     );
+                    //   },
+                    // );
+                    apiService.deleteToken();
                   }
                 })
           ],
